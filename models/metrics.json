@@ -1,0 +1,111 @@
+{
+  "algorithm": "LinearSVC",
+  "vectorizer_type": "TfidfVectorizer",
+  "accuracy": 0.8281666666666667,
+  "train_accuracy": 0.9567056274350481,
+  "accuracy_goal": 0.8,
+  "meets_accuracy_goal": true,
+  "labels": [
+    "Negative",
+    "Neutral",
+    "Positive"
+  ],
+  "per_class": {
+    "Negative": {
+      "precision": 0.7497425334706488,
+      "recall": 0.728,
+      "f1": 0.7387113140537798,
+      "support": 4000
+    },
+    "Neutral": {
+      "precision": 0.9992503748125937,
+      "recall": 0.99975,
+      "f1": 0.9995001249687578,
+      "support": 4000
+    },
+    "Positive": {
+      "precision": 0.7357802625182305,
+      "recall": 0.75675,
+      "f1": 0.746117821050037,
+      "support": 4000
+    }
+  },
+  "macro_avg": {
+    "precision": 0.828257723600491,
+    "recall": 0.8281666666666666,
+    "f1": 0.8281097533575249
+  },
+  "weighted_avg": {
+    "precision": 0.828257723600491,
+    "recall": 0.8281666666666667,
+    "f1": 0.8281097533575248
+  },
+  "confusion_matrix": [
+    [
+      2912,
+      2,
+      1086
+    ],
+    [
+      0,
+      3999,
+      1
+    ],
+    [
+      972,
+      1,
+      3027
+    ]
+  ],
+  "train_size": 47997,
+  "test_size": 12000,
+  "test_fraction": 0.2,
+  "random_state": 42,
+  "fit_seconds": 22.48,
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95,
+    "max_features": 30000,
+    "stop_words": "english, keeping negation words",
+    "vocabulary_size": 26516
+  },
+  "model": {
+    "algorithm": "LinearSVC",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 10000
+  },
+  "source_file": "balanced_sentiment_dataset.csv",
+  "sklearn_version": "1.9.1",
+  "columns": {
+    "text": "sentence",
+    "label": "sentiment"
+  },
+  "dataset": {
+    "rows_loaded": 60000,
+    "raw_label_counts": {
+      "0": 20000,
+      "1": 20000,
+      "2": 20000
+    },
+    "dropped_missing": 1,
+    "dropped_duplicates": 0,
+    "dropped_conflicts": 2,
+    "rows_clean": 59997,
+    "class_counts": {
+      "Neutral": 20000,
+      "Negative": 19999,
+      "Positive": 19998
+    }
+  },
+  "data_notes": [
+    "The saved model uses balanced_sentiment_dataset.csv. The dataset README recommends this subset for SVM experiments.",
+    "Label codes from the dataset README: 0 = Negative, 1 = Positive, 2 = Neutral.",
+    "The dataset README states that neutral messages are synthetic, while positive and negative rows are sampled from the original training data.",
+    "expanded_train_data.csv was not used to fit the saved model."
+  ]
+}
